@@ -12,9 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     // Creating Array of Errors
-    $formErrors = array();
-    if (strlen($user) <= 3) {
-        $formErrors[] = 'Username must be larger than 3 characters';}
+    // $formErrors = array();
+    // if (strlen($user) <= 3) {
+    //     $formErrors[] = 'Username must be larger than 3 characters';}
 
 
     // if no error send the email [ mail(To, Subject, Message, Headers, Parameters) ]
@@ -25,11 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $allName = $user . ' ' . $suruser;
     $content = $subjectForm . '<br>' . $message;
 
-    if(empty($formErrors)) {
+    // if(empty($formErrors)) {
+        
             mail($myEmail, $subject, $content, $headers, $allName);
       
         // $success = 'div class="alert alert-success"> We have recieved your message </div>';
-       }
+    //    }
 
 }
 
