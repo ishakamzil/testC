@@ -1,6 +1,6 @@
 <?php 
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Assign Variables
     $user = filter_var($_POST['name'], FILTER_SANITIZE_STRING);  // the string filter 
     $suruser = filter_var($_POST['surname'], FILTER_SANITIZE_STRING);  // the string filter 
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $content = $subjectForm . '<br>' . $message;
 
     // if(empty($formErrors)) {
-        
+
             mail($myEmail, $subject, $content, $headers, $allName);
       
         // $success = 'div class="alert alert-success"> We have recieved your message </div>';
